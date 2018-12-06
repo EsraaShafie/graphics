@@ -175,6 +175,10 @@
     </ClCompile>
     <ClCompile Include="Texture.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="SimpleFragmentShader.fragmentshader" />
+    <None Include="SimpleVertexShader.vertexshader" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -5,7 +5,7 @@ using namespace glm;
 
 Drawable::Drawable()
 {
-	this->color = vec3(0.0f, 0.0f, 0.0f);
+	this->color = vec3(1.0f, 1.0f, 1.0f); //by default color is white
 	this->postion = vec3(0.0f, 0.0f, 0.0f);
 	this->scale = vec3(1.0f);
 	this->rotation = vec3(0.0f, 0.0f, 0.0f);
