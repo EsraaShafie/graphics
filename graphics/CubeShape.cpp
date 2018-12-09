@@ -1,9 +1,13 @@
-#include "RectangleShape.h"
+#include "CubeShape.h"
 #include "shader.hpp"
+
 
 using namespace glm;
 
-RectangleShape::RectangleShape() : Drawable()
+GLuint CubeShape::programID = 0;
+Texture* CubeShape::mtexture = nullptr;
+
+CubeShape::CubeShape() : Drawable()
 {
 	GLuint VertexArrayID;
 	glGenVertexArrays(1, &VertexArrayID);
@@ -11,12 +15,18 @@ RectangleShape::RectangleShape() : Drawable()
 	glGenBuffers(1, &bufferID);
 	glBindBuffer(GL_ARRAY_BUFFER, bufferID);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(verts), verts, GL_STATIC_DRAW);
-	programID = LoadShaders("SimpleVertexShader.vertexshader", "SimpleFragmentShader.fragmentshader");
+	if (programID == 0)
+	{
+		programID = LoadShaders("SimpleVertexShader.vertexshader", "SimpleFragmentShader.fragmentshader");
+	}
 	mvpID = glGetUniformLocation(programID, "MVP");
 	colorID = glGetUniformLocation(programID, "Color");
-	mtexture = new Texture("seamless_cow_texture_6814796.jpg", 0);
+	if (mtexture == nullptr)
+	{
+		mtexture = new Texture("grass-texture_1000x.jpeg", 0);
+	}
 }
-void RectangleShape::SetTexture(const char* TextureName)
+void CubeShape::SetTexture(const char* TextureName)
 {
 	if (mtexture != nullptr)
 	{
@@ -24,26 +34,23 @@ void RectangleShape::SetTexture(const char* TextureName)
 	}
 	mtexture = new Texture(TextureName, 0);
 }
-void RectangleShape::Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix) const
+void CubeShape::Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix) const
 {
 	glUseProgram(programID);
 	glBindBuffer(GL_ARRAY_BUFFER, bufferID);
 	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 5, (void*)0);
 	glEnableVertexAttribArray(2);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 5, (void*)0);
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 5, (char*)(sizeof(float) * 3));
 	mat4 MVP = ProjectionMatrix * ViewMatrix * ModelMatrix;
 	glUniformMatrix4fv(mvpID, 1, GL_FALSE, &MVP[0][0]);
 	glUniform3fv(colorID, 1, &color[0]);
 	mtexture->Bind();
-	glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+	for (int i = 0; i < 24; i += 4)
+	{
+		glDrawArrays(GL_TRIANGLE_FAN, i, 4);
+	}
 	glDisableVertexAttribArray(0);
 	glDisableVertexAttribArray(2);
-}
-RectangleShape::~RectangleShape()
-{
-	if (mtexture != nullptr)
-	{
-		delete mtexture;
-	}
+
 }

@@ -20,13 +20,17 @@ GLFWwindow* Engine::CreateWindow(int width, int height, const char* title)
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	GLFWwindow* window = glfwCreateWindow(width, height, title, NULL, NULL);
 	glfwMakeContextCurrent(window);
+	Input::SetWindow(window);
 	if (!isGLEWInitialized)
 	{
 		isGLEWInitialized = true;
 		glewInit();
 	}
 	glEnable(GL_DEPTH_TEST);
-	glDepthFunc(GL_LESS);
+	glDepthFunc(GL_LESS); 
+	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);//22fsh zorar el esc
+	glfwSetKeyCallback(window, &Input::KeyCallBack);//lma ydas 3ala zorar 
+	//glfwSetMouseButtonCallback(window, &MouseClicked);
 	return window;
 }
 void Engine::SetClearColor(const glm::vec3& color)

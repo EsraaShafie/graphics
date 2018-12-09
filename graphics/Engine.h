@@ -7,6 +7,8 @@
 #include "Drawable.h"
 #include "RectangleShape.h"
 #include "FPCamera.h"
+#include "CubeShape.h"
+#include "Keyboard.h"
 
 namespace Engine
 {

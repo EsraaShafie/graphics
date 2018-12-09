@@ -1,9 +1,12 @@
+#pragma once
+
 #include "glm/glm.hpp"
 #include "glm/gtx/transform.hpp"
 #include "Drawable.h"
 #include <GL/glew.h>
 #include "texture.h"
 using namespace glm;
+
 
 class RectangleShape : public Drawable
 {

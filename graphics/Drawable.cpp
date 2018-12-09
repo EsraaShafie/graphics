@@ -18,7 +18,7 @@ void Drawable::Translate(const vec3& distance)
 }
 void Drawable::Rotate(const vec3& angle)
 {
-	ModelMatrix *= rotate(angle.z, vec3(0.0f, 0.0f, 1.0f));
+	ModelMatrix *= rotate(angle.x, vec3(0.0f, 1.0f, 0.0f));
 	rotation += angle;
 }
 void Drawable::Scale(const vec3& scale)

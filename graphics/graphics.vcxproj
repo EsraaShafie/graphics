@@ -149,9 +149,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CubeMap.h" />
+    <ClInclude Include="CubeShape.h" />
     <ClInclude Include="Drawable.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="FPCamera.h" />
+    <ClInclude Include="Keyboard.h" />
     <ClInclude Include="RectangleShape.h" />
     <ClInclude Include="shader.hpp" />
     <ClInclude Include="stb_image.h" />
@@ -160,9 +163,12 @@
     <ClInclude Include="Texture.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CubeMap.cpp" />
+    <ClCompile Include="CubeShape.cpp" />
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="FPCamera.cpp" />
+    <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RectangleShape.cpp" />
     <ClCompile Include="shader.cpp" />
@@ -178,6 +184,10 @@
   <ItemGroup>
     <None Include="SimpleFragmentShader.fragmentshader" />
     <None Include="SimpleVertexShader.vertexshader" />
+    <None Include="CubeMap.fragmentshader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="grass-texture_1000x.jpeg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
