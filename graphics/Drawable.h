@@ -21,7 +21,9 @@ public:
 	const vec3& GetRotation();
 	const vec3& GetScale();
 	const vec3& GetColor();
-	virtual void Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix) const = 0;
+	const mat4& GetModelMatrix();
+	void SetModelMatrix(const mat4&);
+	virtual void Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix) = 0;
 };
 
 #endif

@@ -26,7 +26,7 @@ private:
 	Texture* mtexture;
 public:
 	RectangleShape();
-	void Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix) const;
+	void Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix);
 	void SetTexture(const char* TextureName);
 	~RectangleShape();
 };

@@ -154,6 +154,7 @@
     <ClInclude Include="Drawable.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="FPCamera.h" />
+    <ClInclude Include="Hero.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="RectangleShape.h" />
     <ClInclude Include="shader.hpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="FPCamera.cpp" />
+    <ClCompile Include="Hero.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RectangleShape.cpp" />

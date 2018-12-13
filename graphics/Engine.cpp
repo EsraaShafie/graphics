@@ -28,8 +28,8 @@ GLFWwindow* Engine::CreateWindow(int width, int height, const char* title)
 	}
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS); 
-	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);//22fsh zorar el esc
-	glfwSetKeyCallback(window, &Input::KeyCallBack);//lma ydas 3ala zorar 
+	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+	glfwSetKeyCallback(window, &Input::KeyCallBack);
 	//glfwSetMouseButtonCallback(window, &MouseClicked);
 	return window;
 }
@@ -46,7 +46,7 @@ FPCamera& Engine::GetCamera()
 	isCameraModifed = true;
 	return Camera;
 }
-void Engine::Draw(const Drawable& obj)
+void Engine::Draw(Drawable& obj)
 {
 	if (isCameraModifed)
 	{

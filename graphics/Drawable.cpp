@@ -45,4 +45,13 @@ const vec3& Drawable::GetScale()
 const vec3& Drawable::GetColor()
 {
 	return color;
+
+}
+const mat4& Drawable::GetModelMatrix()
+{
+	return ModelMatrix;
+}
+void Drawable::SetModelMatrix(const mat4& m)
+{
+	ModelMatrix = m;
 }

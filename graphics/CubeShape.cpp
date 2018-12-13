@@ -5,10 +5,14 @@
 using namespace glm;
 
 GLuint CubeShape::programID = 0;
-Texture* CubeShape::mtexture = nullptr;
 
 CubeShape::CubeShape() : Drawable()
 {
+	mtexture.resize(6);
+	for (int i = 0; i < 6; i++)
+	{
+		mtexture[i] = nullptr;
+	}
 	GLuint VertexArrayID;
 	glGenVertexArrays(1, &VertexArrayID);
 	glBindVertexArray(VertexArrayID);
@@ -21,20 +25,24 @@ CubeShape::CubeShape() : Drawable()
 	}
 	mvpID = glGetUniformLocation(programID, "MVP");
 	colorID = glGetUniformLocation(programID, "Color");
-	if (mtexture == nullptr)
-	{
-		mtexture = new Texture("grass-texture_1000x.jpeg", 0);
-	}
 }
-void CubeShape::SetTexture(const char* TextureName)
+void CubeShape::SetTexture(const char** TextureName)
 {
-	if (mtexture != nullptr)
+	for (auto i : mtexture)
 	{
-		delete mtexture;
+		if (i != nullptr)
+		{
+			delete i;
+		}
 	}
-	mtexture = new Texture(TextureName, 0);
+	mtexture.clear();
+	for (int i = 0; i < 6; i++)
+	{
+		Texture* t = new Texture(TextureName[i], 0);
+		mtexture.push_back(t);
+	}
 }
-void CubeShape::Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix) const
+void CubeShape::Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix)
 {
 	glUseProgram(programID);
 	glBindBuffer(GL_ARRAY_BUFFER, bufferID);
@@ -45,9 +53,12 @@ void CubeShape::Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix) const
 	mat4 MVP = ProjectionMatrix * ViewMatrix * ModelMatrix;
 	glUniformMatrix4fv(mvpID, 1, GL_FALSE, &MVP[0][0]);
 	glUniform3fv(colorID, 1, &color[0]);
-	mtexture->Bind();
 	for (int i = 0; i < 24; i += 4)
 	{
+		if (mtexture[i / 4] != nullptr)
+		{
+			mtexture[i / 4]->Bind();
+		}
 		glDrawArrays(GL_TRIANGLE_FAN, i, 4);
 	}
 	glDisableVertexAttribArray(0);

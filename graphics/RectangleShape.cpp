@@ -24,7 +24,7 @@ void RectangleShape::SetTexture(const char* TextureName)
 	}
 	mtexture = new Texture(TextureName, 0);
 }
-void RectangleShape::Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix) const
+void RectangleShape::Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix)
 {
 	glUseProgram(programID);
 	glBindBuffer(GL_ARRAY_BUFFER, bufferID);

@@ -9,11 +9,12 @@
 #include "FPCamera.h"
 #include "CubeShape.h"
 #include "Keyboard.h"
+#include "Hero.h"
 
 namespace Engine
 {
 	GLFWwindow* CreateWindow(int width, int height, const char* title);
-	void Draw(const Drawable& obj);
+	void Draw(Drawable& obj);
 	void ClearWindow();
 	void SetClearColor(const glm::vec3& color);
 	FPCamera& GetCamera();

@@ -4,6 +4,8 @@
 #include "Drawable.h"
 #include <GL/glew.h>
 #include "texture.h"
+#include <vector>
+
 using namespace glm;
 
 
@@ -69,14 +71,10 @@ private:
 		+1.0f, 0.0f,
 	};
 	GLuint bufferID, mvpID, colorID;
-	static Texture* mtexture;
+	std::vector<Texture*> mtexture;
 	static GLuint programID;
-
 public:
 	CubeShape();
-   void Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix) const;
-	void SetTexture(const char* TextureName);
-	
-
-
+    void Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix);
+	void SetTexture(const char** TextureName);
 };
