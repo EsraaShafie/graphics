@@ -1,6 +1,8 @@
 #include "Drawable.h"
 #include "shader.hpp"
 
+#define PI 3.14159265359f
+
 using namespace glm;
 
 Drawable::Drawable()
@@ -18,7 +20,13 @@ void Drawable::Translate(const vec3& distance)
 }
 void Drawable::Rotate(const vec3& angle)
 {
-	ModelMatrix *= rotate(angle.x, vec3(0.0f, 1.0f, 0.0f));
+	ModelMatrix[3][0] = ModelMatrix[3][1] = ModelMatrix[3][2] = 0;
+	ModelMatrix *= rotate(angle.y, vec3(0.0f, 1.0f, 0.0f));
+	ModelMatrix *= rotate(angle.z, vec3(0.0f, 0.0f, 1.0f));
+	ModelMatrix *= rotate(angle.x, vec3(1.0f, 0.0f, 0.0f));
+	ModelMatrix[3].x = postion.x;
+	ModelMatrix[3].y = postion.y;
+	ModelMatrix[3].z = postion.z;
 	rotation += angle;
 }
 void Drawable::Scale(const vec3& scale)
