@@ -156,6 +156,7 @@
     <ClInclude Include="EulerCamera\EulerCamera.h" />
     <ClInclude Include="Hero.h" />
     <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="Ligh.h" />
     <ClInclude Include="RectangleShape.h" />
     <ClInclude Include="shader.hpp" />
     <ClInclude Include="stb_image.h" />
@@ -171,6 +172,7 @@
     <ClCompile Include="EulerCamera\EulerCamera.cpp" />
     <ClCompile Include="Hero.cpp" />
     <ClCompile Include="Keyboard.cpp" />
+    <ClCompile Include="Light.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RectangleShape.cpp" />
     <ClCompile Include="shader.cpp" />
