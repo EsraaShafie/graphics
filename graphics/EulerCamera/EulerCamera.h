@@ -1,11 +1,14 @@
-#ifndef FPCamera_h__
-#define FPCamera_h__
+#ifndef EulerCamera_h__
+#define EulerCamera_h__
 
-#include "glm/glm.hpp"
-#include "glm/gtc/matrix_transform.hpp"
-#include "glm/gtx/rotate_vector.hpp"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/rotate_vector.hpp>
+#include <glm/gtc/quaternion.hpp>
+#include <glm/gtx/quaternion.hpp>
 
-class FPCamera
+//Note: this camera assumes left hand rule.
+class EulerCamera
 {
 	glm::vec3 mPosition;
 	glm::vec3 mUp;
@@ -14,16 +17,19 @@ class FPCamera
 	glm::mat4 mViewMatrix;
 	glm::mat4 mProjectionMatrix;
 
+	double mAngleX,mAngleY;
+
 	glm::vec3 GetLookDirection();
 
 public:
-	FPCamera(void);
-	~FPCamera(void);
+	EulerCamera(void);
+	~EulerCamera(void);
 
 	void UpdateViewMatrix();
 	glm::mat4 GetViewMatrix();
 	void SetPerspectiveProjection(float FOV, float aspectRatio, float near, float far);
 	glm::mat4 GetProjectionMatrix();
+	glm::vec3 GetEyePosition();
 
 	void Reset(float eyeX, float eyeY, float eyeZ, float centerX, float centerY, float centerZ, float upX, float upY, float upZ);
 	void Reset(const glm::vec3 &eye, const glm::vec3 &center, glm::vec3  &up);
@@ -77,5 +83,5 @@ public:
 	/// </summary>
 	void Slide(float stepR, float stepU, float stepD);
 };
-#endif // FPCamera_h__
+#endif // EulerCamera_h__
 

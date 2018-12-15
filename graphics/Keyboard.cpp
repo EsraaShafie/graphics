@@ -1,4 +1,6 @@
 #include "Keyboard.h"
+#include"EulerCamera\EulerCamera.h"
+
 #include <map>
 
 std::map<int, bool> KeyMap;

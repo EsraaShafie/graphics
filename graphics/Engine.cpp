@@ -1,6 +1,6 @@
 #include "Engine.h"
 
-FPCamera Camera;
+EulerCamera Camera;
 bool isCameraModifed = true;
 bool isGLFWInitialized = false, isGLEWInitialized = false;
 
@@ -41,7 +41,7 @@ void Engine::ClearWindow()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
-FPCamera& Engine::GetCamera()
+EulerCamera& Engine::GetCamera()
 {
 	isCameraModifed = true;
 	return Camera;

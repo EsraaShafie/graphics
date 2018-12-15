@@ -6,7 +6,7 @@
 #include "shader.hpp"
 #include "Drawable.h"
 #include "RectangleShape.h"
-#include "FPCamera.h"
+#include "EulerCamera\EulerCamera.h"
 #include "CubeShape.h"
 #include "Keyboard.h"
 #include "Hero.h"
@@ -17,5 +17,5 @@ namespace Engine
 	void Draw(Drawable& obj);
 	void ClearWindow();
 	void SetClearColor(const glm::vec3& color);
-	FPCamera& GetCamera();
+	EulerCamera& GetCamera();
 }

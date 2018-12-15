@@ -63,7 +63,7 @@ void Hero::Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix)
 		mat4 m = i->GetModelMatrix();
 		i->SetModelMatrix(ModelMatrix * m);
 		Engine::Draw(*i);
-		i->SetModelMatrix(m);
+		i->SetModelMatrix(m);//model matrix relative to the hero 
 	}
 }
 CubeShape & Hero::GetLeftArm()
