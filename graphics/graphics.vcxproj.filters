@@ -57,7 +57,13 @@
     <ClInclude Include="EulerCamera\EulerCamera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Ligh.h">
+    <ClInclude Include="Light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -104,6 +110,12 @@
     <ClCompile Include="Light.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="SimpleFragmentShader.fragmentshader">
@@ -115,9 +127,36 @@
     <None Include="CubeMap.fragmentshader">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="MultiColor.fragmentshader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="SimpleTransformWithColor.vertexshader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="LightFragment.fragment">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="LightVertex.vertex">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="grass-texture_1000x.jpeg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bottom.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Papai-noel-skin_front.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Papai-noel-skin-back.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="red.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bark__1__seamless__mp.jpg">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -7,7 +7,8 @@ private:
 	CubeShape LeftArm, RightArm, LeftLeg, RightLeg, Head, Body;
 public:
 	Hero();
-	void Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix);
+	void Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix,
+		      const vec3& EyePos, const vec3& LightPos, const vec3& Ambient);
 	CubeShape& GetLeftArm();
 	CubeShape& GetRightArm();
 	CubeShape& GetLeftLeg();

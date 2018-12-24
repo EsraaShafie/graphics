@@ -152,27 +152,34 @@
     <ClInclude Include="CubeMap.h" />
     <ClInclude Include="CubeShape.h" />
     <ClInclude Include="Drawable.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="EulerCamera\EulerCamera.h" />
     <ClInclude Include="Hero.h" />
     <ClInclude Include="Keyboard.h" />
-    <ClInclude Include="Ligh.h" />
+    <ClInclude Include="Light.h" />
     <ClInclude Include="RectangleShape.h" />
     <ClInclude Include="shader.hpp" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="Tree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CubeMap.cpp" />
     <ClCompile Include="CubeShape.cpp" />
     <ClCompile Include="Drawable.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="EulerCamera\EulerCamera.cpp" />
     <ClCompile Include="Hero.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="Light.cpp" />
+    <ClCompile Include="Tree.cpp" />
+    <None Include="LightVertex.vertex">
+      <FileType>Document</FileType>
+    </None>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RectangleShape.cpp" />
     <ClCompile Include="shader.cpp" />
@@ -186,12 +193,20 @@
     <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="LightFragment.fragment" />
+    <None Include="MultiColor.fragmentshader" />
     <None Include="SimpleFragmentShader.fragmentshader" />
+    <None Include="SimpleTransformWithColor.vertexshader" />
     <None Include="SimpleVertexShader.vertexshader" />
     <None Include="CubeMap.fragmentshader" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="bark__1__seamless__mp.jpg" />
+    <Image Include="bottom.jpg" />
     <Image Include="grass-texture_1000x.jpeg" />
+    <Image Include="Papai-noel-skin-back.png" />
+    <Image Include="Papai-noel-skin_front.png" />
+    <Image Include="red.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,6 @@
 #include "glm/glm.hpp"
 #include "glm/gtx/transform.hpp"
+#include "EulerCamera\EulerCamera.h"
 
 #ifndef DRAWABLE_CLASS
 #define DRAWABLE_CLASS
@@ -9,6 +10,7 @@ using namespace glm;
 class Drawable
 {
 protected:
+	EulerCamera* BoundCamera;
 	mediump_mat4 ModelMatrix;
 	mediump_vec3 postion, rotation, scale, color;
 public:
@@ -23,7 +25,8 @@ public:
 	const vec3& GetColor();
 	const mat4& GetModelMatrix();
 	void SetModelMatrix(const mat4&);
-	virtual void Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix) = 0;
+	virtual void Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix,
+					  const vec3& EyePos, const vec3& LightPos, const vec3& Ambient) = 0;
 };
 
 #endif

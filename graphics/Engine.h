@@ -10,6 +10,8 @@
 #include "CubeShape.h"
 #include "Keyboard.h"
 #include "Hero.h"
+#include "Enemy.h"
+#include "Tree.h"
 
 namespace Engine
 {

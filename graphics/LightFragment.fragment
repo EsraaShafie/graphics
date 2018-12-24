@@ -1,0 +1,28 @@
+#version 330 core
+
+in vec2 uv;
+in vec3 normal;
+in vec3 pos;
+
+uniform vec3 Color;
+uniform vec3 LightPos;
+uniform vec3 EyePos;
+uniform vec3 ambient;
+uniform sampler2D MyTex;
+
+out vec4 Res;
+
+void main()
+{
+	//diffuse
+	vec3 LightVector = normalize(LightPos - pos);
+	float brightness = clamp(dot(LightVector, normal), 0, 1);
+	vec3 diffuse = vec3(brightness, brightness, brightness);
+	//specular
+	vec3 ReflectedLightVector = reflect(-LightVector, normal);
+	vec3 EyeVector = normalize(EyePos - pos);
+	float specularity = pow(clamp(dot(ReflectedLightVector, EyeVector), 0, 1), 50);
+	vec3 specular = vec3(specularity, specularity, specularity);
+	//Result
+	Res = texture(MyTex, uv) * vec4(diffuse + specular + ambient, 1.0) * vec4(Color, 1.0);
+}

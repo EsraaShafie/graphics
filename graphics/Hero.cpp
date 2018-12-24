@@ -5,9 +5,9 @@ Hero::Hero()
 	const char* FaceTextures[] =
 	{
 		"FaceFront.png",
-		"FaceRight.jpg",
+		"FaceRight.png",
 		"FaceBack.jpg",
-		"FaceLeft.jpg",
+		"FaceRight.png",
 		"FaceTop.jpg",
 		"FaceTop.jpg"
 	};
@@ -55,7 +55,8 @@ Hero::Hero()
 	LeftLeg.Translate(vec3(-1.0f, -1.78f, 0.0f));
 	RightLeg.Translate(vec3(1.0f, -1.78f, 0.0f));
 }
-void Hero::Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix)
+void Hero::Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix,
+	            const vec3& EyePos, const vec3& LightPos, const vec3& Ambient)
 {
 	CubeShape* Parts[] = { &LeftArm, &RightArm, &Body, &Head, &LeftLeg, &RightLeg };
 	for (auto i : Parts)

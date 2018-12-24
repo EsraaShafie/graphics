@@ -53,5 +53,6 @@ void Engine::Draw(Drawable& obj)
 		Camera.UpdateViewMatrix();
 		isCameraModifed = false;
 	}
-	obj.Draw(Camera.GetProjectionMatrix(), Camera.GetViewMatrix());
+	obj.Draw(Camera.GetProjectionMatrix(), Camera.GetViewMatrix(), Camera.GetEyePosition(),
+			 glm::vec3(3.0f, 3.0f, 3.0f), glm::vec3(0.4f, 0.4f, 0.4f));
 }
