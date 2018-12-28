@@ -48,11 +48,13 @@ EulerCamera& Engine::GetCamera()
 }
 void Engine::Draw(Drawable& obj)
 {
+	/*
 	if (isCameraModifed)
 	{
 		Camera.UpdateViewMatrix();
 		isCameraModifed = false;
 	}
+	*/
 	obj.Draw(Camera.GetProjectionMatrix(), Camera.GetViewMatrix(), Camera.GetEyePosition(),
-			 glm::vec3(3.0f, 3.0f, 3.0f), glm::vec3(0.4f, 0.4f, 0.4f));
+			 glm::vec3(100.0f, 100.0f, 100.0f), glm::vec3(0.4f, 0.4f, 0.4f));
 }

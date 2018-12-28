@@ -54,6 +54,9 @@ Hero::Hero()
 	RightLeg.Scale(vec3(0.5f, 2.0f, 0.6f));
 	LeftLeg.Translate(vec3(-1.0f, -1.78f, 0.0f));
 	RightLeg.Translate(vec3(1.0f, -1.78f, 0.0f));
+	Rotate(vec3(0.0f, 180.0f, 0.0f));
+	Scale(vec3(0.2f, 0.2f, 0.2f));
+	Translate(vec3(0.0f, 10.0f, 0.0f));
 }
 void Hero::Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix,
 	            const vec3& EyePos, const vec3& LightPos, const vec3& Ambient)

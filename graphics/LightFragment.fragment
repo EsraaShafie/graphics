@@ -3,7 +3,7 @@
 in vec2 uv;
 in vec3 normal;
 in vec3 pos;
-
+uniform int mode;
 uniform vec3 Color;
 uniform vec3 LightPos;
 uniform vec3 EyePos;
@@ -24,5 +24,13 @@ void main()
 	float specularity = pow(clamp(dot(ReflectedLightVector, EyeVector), 0, 1), 50);
 	vec3 specular = vec3(specularity, specularity, specularity);
 	//Result
+	
+	if (mode==0)
+	{
+	Res= vec4(diffuse + specular + ambient, 1.0) * vec4(Color, 1.0);;
+	}
+	else
+	{
 	Res = texture(MyTex, uv) * vec4(diffuse + specular + ambient, 1.0) * vec4(Color, 1.0);
+	}
 }

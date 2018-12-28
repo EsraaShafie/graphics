@@ -1,6 +1,6 @@
 #include "glm/glm.hpp"
 #include "glm/gtx/transform.hpp"
-#include "EulerCamera\EulerCamera.h"
+#include "EulerCamera/EulerCamera.h"
 
 #ifndef DRAWABLE_CLASS
 #define DRAWABLE_CLASS
@@ -11,6 +11,7 @@ class Drawable
 {
 protected:
 	EulerCamera* BoundCamera;
+	vec3 ForwardVector;
 	mediump_mat4 ModelMatrix;
 	mediump_vec3 postion, rotation, scale, color;
 public:
@@ -19,6 +20,7 @@ public:
 	void Rotate(const vec3& angles);
 	void Scale(const vec3& scale);
 	void SetColor(const vec3& color);
+	void SetPosition(const vec3& Position);
 	const vec3& GetPosition();
 	const vec3& GetRotation();
 	const vec3& GetScale();

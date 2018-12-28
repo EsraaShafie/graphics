@@ -28,8 +28,10 @@ Tree::Tree()
 	Treee.SetTexture(GreenTextures);
 	//Body.Scale(vec3(2.0f, 2.8f, 1.6f));
 	Root.Scale(vec3(1.0f, 3.0f, 1.0f));
+	Treee.Scale(vec3(2.0f, 1.0f, 2.0f));
+	Treee.Translate(vec3(0.0f, 4.0f, 0.0f));
 	//Body.Translate(vec3(0.0f, 0.12f, 0.0f));
-	Root.Translate(vec3(0.0f,0.8f,5.0f));
+	//Root.Translate(vec3(0.0f,0.8f,0.0f));
 }
 void Tree::Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix,
 	const vec3& EyePos, const vec3& LightPos, const vec3& Ambient)

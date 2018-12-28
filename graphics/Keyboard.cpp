@@ -6,6 +6,7 @@
 std::map<int, bool> KeyMap;
 glm::vec2 LastMousePos;
 GLFWwindow* CurrentWindow;
+//??
 void Input::KeyCallBack(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
 	KeyMap[key] = (action != GLFW_RELEASE);

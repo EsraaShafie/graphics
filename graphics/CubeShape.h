@@ -94,12 +94,15 @@ private:
 		0.0f, 1.0f, 0.0f,
 		+1.0f, 0.0f,
 	};
-	GLuint VertexArrayID, bufferID, mvpID, colorID, modelMatrixID, eyeID, lightID, ambientID;
+	static GLuint VertexArrayID, bufferID, mvpID, colorID, modelMatrixID, eyeID, lightID, ambientID,IntID;
 	std::vector<Texture*> mtexture;
 	static GLuint programID;
+	int mode;
 public:
 	CubeShape();
     void Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix,
 		      const vec3& EyePos, const vec3& LightPos, const vec3& Ambient);
 	void SetTexture(const char** TextureName);
+	void SetTexture(const CubeShape&);
+	void SetMode(const int mode);
 };

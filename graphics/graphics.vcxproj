@@ -157,6 +157,7 @@
     <ClInclude Include="EulerCamera\EulerCamera.h" />
     <ClInclude Include="Hero.h" />
     <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="LandGenerator.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="RectangleShape.h" />
     <ClInclude Include="shader.hpp" />
@@ -175,6 +176,7 @@
     <ClCompile Include="EulerCamera\EulerCamera.cpp" />
     <ClCompile Include="Hero.cpp" />
     <ClCompile Include="Keyboard.cpp" />
+    <ClCompile Include="LandGenerator.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="Tree.cpp" />
     <None Include="LightVertex.vertex">

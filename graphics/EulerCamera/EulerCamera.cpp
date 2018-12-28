@@ -132,3 +132,14 @@ glm::vec3 EulerCamera::GetEyePosition()
 {
 	return mPosition;
 }
+
+void EulerCamera::SetEyePosition(const glm::vec3& other)
+{
+	mPosition = other;
+	UpdateViewMatrix();
+}
+
+void EulerCamera::SetViewMatrix(const glm::mat4& other)
+{
+	mViewMatrix = other;
+}
