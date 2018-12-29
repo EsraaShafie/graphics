@@ -24,6 +24,7 @@ CubeShape::CubeShape() : Drawable()
 	{
 		mtexture[i] = nullptr;
 	}
+//3ashan afdy amkn fel gpu 2ast5dmha
 	glGenVertexArrays(1, &VertexArrayID);
 	glBindVertexArray(VertexArrayID);
 	glGenBuffers(1, &bufferID);
@@ -32,6 +33,7 @@ CubeShape::CubeShape() : Drawable()
 	glEnableVertexAttribArray(0);
 	glEnableVertexAttribArray(1);
 	glEnableVertexAttribArray(2);
+
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 8, (void*)0);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 8, (char*)(sizeof(float) * 3));
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 8, (char*)(sizeof(float) * 6));

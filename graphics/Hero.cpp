@@ -43,6 +43,7 @@ Hero::Hero()
 	RightArm.SetTexture(ArmTextures);
 	Body.SetTexture(BodyTextures);
 	LeftLeg.SetTexture(LegLeftTextures);
+
 	Head.Translate(vec3(0.0f, 3.0f, 0.0f));
 	LeftArm.Scale(vec3(0.5f, 2.0f, 0.6f));
 	RightArm.Scale(vec3(0.5f, 2.0f, 0.6f));
@@ -54,6 +55,7 @@ Hero::Hero()
 	RightLeg.Scale(vec3(0.5f, 2.0f, 0.6f));
 	LeftLeg.Translate(vec3(-1.0f, -1.78f, 0.0f));
 	RightLeg.Translate(vec3(1.0f, -1.78f, 0.0f));
+
 	Rotate(vec3(0.0f, 180.0f, 0.0f));
 	Scale(vec3(0.2f, 0.2f, 0.2f));
 	Translate(vec3(0.0f, 10.0f, 0.0f));
@@ -64,6 +66,7 @@ void Hero::Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix,
 	CubeShape* Parts[] = { &LeftArm, &RightArm, &Body, &Head, &LeftLeg, &RightLeg };
 	for (auto i : Parts)
 	{
+		
 		mat4 m = i->GetModelMatrix();
 		i->SetModelMatrix(ModelMatrix * m);
 		Engine::Draw(*i);

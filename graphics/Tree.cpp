@@ -32,6 +32,8 @@ Tree::Tree()
 	Treee.Translate(vec3(0.0f, 4.0f, 0.0f));
 	//Body.Translate(vec3(0.0f, 0.12f, 0.0f));
 	//Root.Translate(vec3(0.0f,0.8f,0.0f));
+	Root.SetMode(0);
+	Root.SetColor(vec3(0.6f, 0.4f, 0.2f));
 }
 void Tree::Draw(const mat4& ProjectionMatrix, const mat4& ViewMatrix,
 	const vec3& EyePos, const vec3& LightPos, const vec3& Ambient)

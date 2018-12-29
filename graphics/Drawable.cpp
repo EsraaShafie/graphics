@@ -24,11 +24,13 @@ void Drawable::Translate(const vec3& distance)
 }
 void Drawable::Rotate(const vec3& angle)
 {
+	//Aplly the Rotation ..
 	glm::mat4 m(1.0f);
 	m *= rotate(angle.y, vec3(0.0f, 1.0f, 0.0f));
 	//m *= rotate(angle.z + rotation.z, vec3(0.0f, 0.0f, 1.0f));
 	//m *= rotate(angle.x + rotation.x, vec3(1.0f, 0.0f, 0.0f));
 	ModelMatrix *= m;
+	//Update Rotation Vector..
 	rotation += angle;
 }
 void Drawable::Scale(const vec3& scale)

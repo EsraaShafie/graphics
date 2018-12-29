@@ -100,11 +100,14 @@ void LandGenerator::FlushLand(std::vector<CubeShape*> &land)
         {
             if(land[i]->GetPosition() != CurrentLand[i].first)
             {
+		
                 land[i]->SetPosition(CurrentLand[i].first);
             }
         }
         else
         {
+			if (i > 2000)
+				break;
             CubeShape* c = new CubeShape();
             c->SetTexture(*RefCube);
             c->Translate(CurrentLand[i].first);
